@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-NAMESPACE="github.com/nikoheikkila/"
+ROOT=$(dirname "$0")
 
 for package in */; do
-    go test -v "${NAMESPACE}${package}"
+    go test -v "$ROOT/${package}"
 done
