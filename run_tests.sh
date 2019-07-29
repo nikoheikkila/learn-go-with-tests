@@ -3,6 +3,9 @@ set -euo pipefail
 
 ROOT=$(dirname "$0")
 
+cd "${ROOT}"
+golangci-lint run
+
 for package in */; do
-    go test -v "$ROOT/${package}"
+    go test -v "${ROOT}/${package}"
 done
