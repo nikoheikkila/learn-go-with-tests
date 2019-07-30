@@ -27,4 +27,11 @@ func TestRepeat(t *testing.T) {
 		assertSame(t, repeated, expected)
 	})
 
+	t.Run("should not repeat where not needed", func(t *testing.T) {
+		repeated := repeat("a", 0)
+		expected := "a"
+
+		assertSame(t, repeated, expected)
+	})
+
 }

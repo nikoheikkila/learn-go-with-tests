@@ -12,6 +12,10 @@ func TestHello(t *testing.T) {
 		}
 	}
 
+	t.Run("should execute main function", func(t *testing.T) {
+		main()
+	})
+
 	t.Run("should say hello to people", func(t *testing.T) {
 		got := hello("Chris", "English")
 		want := "Hello, Chris!"
