@@ -7,5 +7,5 @@ cd "${ROOT}"
 golangci-lint run
 
 for package in */; do
-    go test -v "${ROOT}/${package}"
+    go test -v -cover "${ROOT}/${package}"
 done
