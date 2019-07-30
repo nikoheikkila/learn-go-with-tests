@@ -4,7 +4,7 @@ import "testing"
 
 func TestHello(t *testing.T) {
 
-	assertCorrectMessage := func(t *testing.T, got string, want string) {
+	assertSame := func(t *testing.T, got string, want string) {
 		t.Helper()
 
 		if got != want {
@@ -16,27 +16,27 @@ func TestHello(t *testing.T) {
 		got := hello("Chris", "English")
 		want := "Hello, Chris!"
 
-		assertCorrectMessage(t, got, want)
+		assertSame(t, got, want)
 	})
 
 	t.Run("should say 'Hello World' when name left blank", func(t *testing.T) {
 		got := hello("", "")
 		want := "Hello, world!"
 
-		assertCorrectMessage(t, got, want)
+		assertSame(t, got, want)
 	})
 
 	t.Run("should greet in Spanish", func(t *testing.T) {
 		got := hello("Elodie", "Spanish")
 		want := "Hola, Elodie!"
 
-		assertCorrectMessage(t, got, want)
+		assertSame(t, got, want)
 	})
 
 	t.Run("should greet in French", func(t *testing.T) {
 		got := hello("Michel", "French")
 		want := "Bonjour, Michel!"
 
-		assertCorrectMessage(t, got, want)
+		assertSame(t, got, want)
 	})
 }
